@@ -9,6 +9,9 @@ for url in set(open('links.md').readlines()):
     name  = name.replace("\n", "")
     if os.path.exists(name):
         continue
-    print name 
-    with open(name, 'wb+') as f:
-        f.write(data)
+    print name
+    try:
+        with open(name, 'wb+') as f:
+          f.write(data)
+    except :
+        continue
